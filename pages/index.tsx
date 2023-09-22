@@ -1,18 +1,14 @@
 import { Box, Flex, Theme, Text, Button, Section } from '@radix-ui/themes';
 import * as React from 'react';
 import NextLink from 'next/link';
-import Head from 'next/head';
 import { ThemesHeader } from '@components/ThemesHeader';
 import { ExampleThemesDashboard } from '@components/ExampleThemesDashboard';
 import { MagicCurtain } from '@components/MagicCurtain';
 import { MobileMenuProvider } from '@components/MobileMenu';
 import { useTheme } from 'next-themes';
 import { SerifHeading } from '@components/SerifHeading';
-import { CodeBlock } from '@components/CodeBlock';
 import { SyntaxSchemeProvider } from '@components/Pre';
 import { ThemesHeroLayout } from '@components/ThemesHeroLayout';
-import { ThemesMobileMenu } from '@components/ThemesMobileMenu';
-import { GridIcon } from '@radix-ui/react-icons';
 import { TitleAndMetaTags } from '@components/TitleAndMetaTags';
 
 export default function ThemesHome() {
