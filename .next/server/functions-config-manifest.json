@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "functions": {
+    "/themes/docs/theme/[slug]": {},
+    "/themes/docs/components/[slug]": {},
+    "/themes/docs/overview/[slug]": {}
+  }
+}

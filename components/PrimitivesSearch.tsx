@@ -92,63 +92,7 @@ function PrimitivesSearchRoot({
         onStateChange: ({ state }) => {
           setSearchState(state);
         },
-        getSources: ({ query, setStatus, state }) => {
-          if (!query) return [];
-          return searchClient
-            .search<SearchItem>([
-              {
-                indexName: process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME,
-                query,
-                params: {
-                  hitsPerPage,
-                  attributesToRetrieve: [
-                    'type',
-                    'url',
-                    'hierarchy.lvl0',
-                    'hierarchy.lvl1',
-                    'hierarchy.lvl2',
-                    'hierarchy.lvl3',
-                    'hierarchy.lvl4',
-                    'content',
-                  ],
-                  attributesToSnippet: [
-                    `hierarchy.lvl0:${snippetLength}`,
-                    `hierarchy.lvl1:${snippetLength}`,
-                    `hierarchy.lvl2:${snippetLength}`,
-                    `hierarchy.lvl3:${snippetLength}`,
-                    `hierarchy.lvl4:${snippetLength}`,
-                    `content:${snippetLength}`,
-                  ],
-                  snippetEllipsisText: '…',
-                  highlightPreTag: '__aa-highlight__',
-                  highlightPostTag: '__/aa-highlight__',
-                },
-              },
-            ])
-            .catch((error) => {
-              // The Algolia `RetryError` happens when all the servers have
-              // failed, meaning that there's no chance the response comes
-              // back. This is the right time to display an error.
-              // See https://github.com/algolia/algoliasearch-client-javascript/blob/2ffddf59bc765cd1b664ee0346b28f00229d6e12/packages/transporter/src/errors/createRetryError.ts#L5
-              if (error.name === 'RetryError') setStatus('error');
-              throw error;
-            })
-            .then(({ results }) => {
-              // we only have 1 query, so we  grab the hits from the first result
-              const { hits } = results[0];
-              const sources = groupBy(hits, (hit) => hit.hierarchy.lvl0);
-              return Object.entries(sources)
-                .sort(sortSources)
-                .map(([lvl0, items]) => ({
-                  onSelect: (params) => {
-                    params.setIsOpen(false);
-                  },
-                  sourceId: lvl0,
-                  getItemUrl: ({ item }) => item.url,
-                  getItems: () => items,
-                }));
-            });
-        },
+        getSources: () => [],
       }),
     []
   );
