@@ -5,8 +5,6 @@ import Head from 'next/head';
 import { ThemesHeader } from '@components/ThemesHeader';
 import { ExampleThemesDashboard } from '@components/ExampleThemesDashboard';
 import { MagicCurtain } from '@components/MagicCurtain';
-import { ExampleThemesEcommerce } from '@components/ExampleThemesEcommerce';
-import { ExampleThemesMusicApp } from '@components/ExampleThemesMusicApp';
 import { MobileMenuProvider } from '@components/MobileMenu';
 import { useTheme } from 'next-themes';
 import { SerifHeading } from '@components/SerifHeading';
@@ -78,110 +76,7 @@ export default function ThemesHome() {
           </Theme>
         </MagicCurtain.Item>
 
-        <MagicCurtain.Item>
-          <Theme hasBackground accentColor="cyan" grayColor="gray">
-            <Box height="0">
-              <ThemesHeader ghost />
-            </Box>
 
-            <ThemesHeroLayout.Root>
-              <ThemesHeroLayout.Background>
-                <BackgroundImage style={tealBackgroundImageStyle} id="5" />
-              </ThemesHeroLayout.Background>
-
-              <ThemesHeroLayout.Main>
-                <MainContent codeBlockScheme="teal" />
-              </ThemesHeroLayout.Main>
-
-              <ThemesHeroLayout.Showcase>
-                <Theme
-                  className="radix-themes-default-fonts"
-                  accentColor="gray"
-                  grayColor="gray"
-                  hasBackground={false}
-                >
-                  <ExampleThemesEcommerce align="start" />
-                </Theme>
-              </ThemesHeroLayout.Showcase>
-            </ThemesHeroLayout.Root>
-          </Theme>
-        </MagicCurtain.Item>
-
-        <MagicCurtain.Item>
-          <Theme hasBackground accentColor="teal" grayColor="gray" appearance={inverted}>
-            <Box height="0">
-              <ThemesHeader ghost />
-            </Box>
-
-            <ThemesHeroLayout.Root>
-              <ThemesHeroLayout.Background>
-                <BackgroundImage style={tealBackgroundImageStyle} id="2" />
-              </ThemesHeroLayout.Background>
-
-              <ThemesHeroLayout.Main>
-                <MainContent codeBlockScheme="teal" />
-              </ThemesHeroLayout.Main>
-
-              <ThemesHeroLayout.Showcase>
-                <Theme
-                  className="radix-themes-default-fonts"
-                  accentColor="gray"
-                  hasBackground={false}
-                >
-                  <ExampleThemesEcommerce align="start" />
-                </Theme>
-              </ThemesHeroLayout.Showcase>
-            </ThemesHeroLayout.Root>
-          </Theme>
-        </MagicCurtain.Item>
-
-        <MagicCurtain.Item>
-          <Theme hasBackground accentColor="red" grayColor="slate">
-            <Box height="0">
-              <ThemesHeader ghost />
-            </Box>
-
-            <ThemesHeroLayout.Root>
-              <ThemesHeroLayout.Background>
-                <BackgroundImage style={redBackgroundImageStyle} id="3" />
-              </ThemesHeroLayout.Background>
-
-              <ThemesHeroLayout.Main>
-                <MainContent codeBlockScheme="red" />
-              </ThemesHeroLayout.Main>
-
-              <ThemesHeroLayout.Showcase>
-                <Theme className="radix-themes-default-fonts" hasBackground={false}>
-                  <ExampleThemesMusicApp align="start" />
-                </Theme>
-              </ThemesHeroLayout.Showcase>
-            </ThemesHeroLayout.Root>
-          </Theme>
-        </MagicCurtain.Item>
-
-        <MagicCurtain.Item>
-          <Theme hasBackground accentColor="red" grayColor="slate" appearance={inverted}>
-            <Box height="0">
-              <ThemesHeader ghost />
-            </Box>
-
-            <ThemesHeroLayout.Root>
-              <ThemesHeroLayout.Background>
-                <BackgroundImage style={redBackgroundImageStyle} id="6" />
-              </ThemesHeroLayout.Background>
-
-              <ThemesHeroLayout.Main>
-                <MainContent codeBlockScheme="red" />
-              </ThemesHeroLayout.Main>
-
-              <ThemesHeroLayout.Showcase>
-                <Theme className="radix-themes-default-fonts" hasBackground={false}>
-                  <ExampleThemesMusicApp align="start" />
-                </Theme>
-              </ThemesHeroLayout.Showcase>
-            </ThemesHeroLayout.Root>
-          </Theme>
-        </MagicCurtain.Item>
 
         <Theme appearance="light" hasBackground={false}>
           <MagicCurtain.Controls
