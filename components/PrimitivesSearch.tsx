@@ -92,7 +92,7 @@ function PrimitivesSearchRoot({
         onStateChange: ({ state }) => {
           setSearchState(state);
         },
-        getSources: ({ query, setStatus, state }) => {
+        getSources: ({ query, setStatus, state }): MaybePromise<(boolean | AutocompleteSource<SearchItem>)[]> => {
           if (!query) return [];
           return searchClient
             .search<SearchItem>([
@@ -126,15 +126,10 @@ function PrimitivesSearchRoot({
               },
             ])
             .catch((error) => {
-              // The Algolia `RetryError` happens when all the servers have
-              // failed, meaning that there's no chance the response comes
-              // back. This is the right time to display an error.
-              // See https://github.com/algolia/algoliasearch-client-javascript/blob/2ffddf59bc765cd1b664ee0346b28f00229d6e12/packages/transporter/src/errors/createRetryError.ts#L5
               if (error.name === 'RetryError') setStatus('error');
               throw error;
             })
             .then(({ results }) => {
-              // we only have 1 query, so we  grab the hits from the first result
               const { hits } = results[0];
               const sources = groupBy(hits, (hit) => hit.hierarchy.lvl0);
               return Object.entries(sources)
@@ -145,13 +140,10 @@ function PrimitivesSearchRoot({
                   },
                   sourceId: lvl0,
                   getItemUrl: ({ item }) => item.url,
-                  getItems: () => items,
+                  getItems: () => items as SearchItem[], // Ensure items is of type SearchItem[]
                 }));
             });
         },
-      }),
-    []
-  );
 
   // Clean up the open state on unmount
   React.useEffect(() => {
