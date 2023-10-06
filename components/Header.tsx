@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AccessibleIcon, Flex, IconButton, Theme, Tooltip } from '@radix-ui/themes';
+import { AccessibleIcon, Flex, IconButton, Button, Theme, Tooltip } from '@radix-ui/themes';
 import styles from './Header.module.css';
 import { BoxLink } from './BoxLink';
 import { ThemeToggle } from './ThemeToggle';
@@ -132,7 +132,7 @@ export const Header = ({ children, gitHubLink, ghost }: HeaderProps) => {
           </Flex>
 
           <Flex
-            display={{ md: 'none' }}
+            // display={{ md: 'none' }}
             align="center"
             gap="4"
             position="absolute"
@@ -141,22 +141,23 @@ export const Header = ({ children, gitHubLink, ghost }: HeaderProps) => {
             right="0"
             pr="4"
           >
+<NextLink href="/login" passHref legacyBehavior>
+            <Button
+              asChild
+              size='2'
+              color="gray"
+              highContrast
+              style={{ flexGrow: 1 }}
+            >
+              <a>
+                Login
+                
+              </a>
+            </Button>
+          </NextLink>
             <div className={styles.HeaderThemeToggleContainer}>
               <ThemeToggle />
             </div>
-
-            <Tooltip className="radix-themes-custom-fonts" content="Navigation">
-              <IconButton
-                size="3"
-                variant="ghost"
-                color="gray"
-                data-state={mobileMenu.open ? 'open' : 'closed'}
-                onClick={() => mobileMenu.setOpen((open) => !open)}
-                className={styles.MobileMenuButton}
-              >
-                <HamburgerMenuIcon width="16" height="16" />
-              </IconButton>
-            </Tooltip>
           </Flex>
         </div>
       </div>

@@ -1,8 +1,10 @@
 {
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/forgot": "pages/forgot.html",
   "/": "pages/index.html",
+  "/login": "pages/login.html",
   "/themes/example-dashboard": "pages/themes/example-dashboard.html",
+  "/_error": "pages/_error.js",
   "/404": "pages/404.html"
 }

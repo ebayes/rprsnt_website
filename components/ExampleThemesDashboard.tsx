@@ -216,44 +216,7 @@ export const ExampleThemesDashboard = (props: React.ComponentPropsWithoutRef<typ
           // marginBottom: 15,
         }}
       >
-        <Card size="4" style={{ height: 320 }}>
-          <Box height="7" mb="4">
-            <Heading as="h3" size="6" mt="-1">
-              Sign up
-            </Heading>
-          </Box>
-
-          <Box mb="5">
-            <Label>
-              <Text as="div" size="2" weight="bold" mb="2">
-                Email address
-              </Text>
-              <TextField.Input tabIndex={-1} placeholder="Enter your email" />
-            </Label>
-          </Box>
-
-          <Box mb="5" position="relative">
-            <Box position="absolute" top="0" right="0" style={{ marginTop: -2 }}>
-              <Link tabIndex={-1} size="2">
-                Forgot password?
-              </Link>
-            </Box>
-
-            <Label>
-              <Text as="div" size="2" weight="bold" mb="2">
-                Password
-              </Text>
-              <TextField.Input tabIndex={-1} placeholder="Enter your password" />
-            </Label>
-          </Box>
-
-          <Flex mt="6" justify="end" gap="3">
-            <Button tabIndex={-1} variant="outline">
-              Create an account
-            </Button>
-            <Button tabIndex={-1}>Sign in</Button>
-          </Flex>
-        </Card>
+        
 
         <Card size="4">
           <Box position="absolute" top="0" right="0" m="3">
