@@ -238,7 +238,7 @@ export const ExampleThemesDashboard = (props: React.ComponentPropsWithoutRef<typ
           </Flex>
 
           <Text as="p" size="3" align="center" mb="5">
-            You helpd Poppy with her housing issue. A summary has been added to the database and
+            You helped Poppy with her housing issue. A summary has been added to the database and
             sent to you from  <Strong>casework@user.rprsnt.ai</Strong>
           </Text>
 
